@@ -62,11 +62,12 @@ class Hooks {
 
 			$vol = floatval( $args['vol'] ?? '1.0' );
 			$preload = htmlspecialchars( $args['preload'] ?? 'metadata' );
+			$audioclass = htmlspecialchars( $args['class'] ?? 'audioclass' );
 
 			$output = '<span>';
 			$output .= '<audio';
 			$output .= ' hidden';
-			$output .= ' class="ext-audiobutton"';
+			$output .= ' class="ext-audiobutton ' . $audioclass . '"';
 			$output .= ' preload="' . $preload . '"';
 			$output .= ' data-volume="' . $vol . '">';
 			$output .= '<source src="' . $url . '" type="' . $mimetype . '">';
